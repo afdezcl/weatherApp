@@ -4,13 +4,26 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { WeatherCardComponent } from './weather-card/weather-card.component';
 
+import {
+  MatCardModule,
+  MatButtonModule,
+  MatDividerModule,
+  MatGridListModule,
+  MatProgressSpinnerModule
+} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
     WeatherCardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent] //this will be the first component to render
