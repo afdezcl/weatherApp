@@ -15,7 +15,7 @@ export class WeatherCardComponent implements OnInit {
   ngOnInit() {
     console.log('ngOnInit');
     setTimeout(() => {
-      this.weather.city = 'Madrid';
+      this.weather.city = 'Madrid, ES';
       this.weather.date = 'Tue, 01 May 2018 06:00 PM CEST';
       this.weather.humidity = 32;
       this.weather.info = 'Nublado';
