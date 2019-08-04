@@ -1,5 +1,8 @@
 <mat-card>
     <mat-card-content>
+        <mat-form-field>
+            <input matinput placeholder="Ciudad" name="cityName" type="text" [(ngModel)]="cityName">
+        </mat-form-field>
         <button mat-raised-button color="primary" (click)='searchCity()'>Buscar Ciudad</button>
         <mat-spinner [style.visibility]="loading ? 'visible' : 'hidden'"></mat-spinner>
     </mat-card-content>
