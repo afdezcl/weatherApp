@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
+import { WeatherSearchComponent } from './weather-search/weather-search.component';
 
 import {
   MatCardModule,
@@ -13,12 +14,12 @@ import {
   MatProgressSpinnerModule
 } from '@angular/material';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     WeatherCardComponent,
-    WeatherForecastComponent
+    WeatherForecastComponent,
+    WeatherSearchComponent
   ],
   imports: [
     BrowserModule,
