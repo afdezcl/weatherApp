@@ -5,7 +5,7 @@ import { WeatherIconComponent } from './weather-icon/weather-icon.component';
 import { DropdownDirective } from './dropdown.directive';
 import { DropdowntoggleDirective } from './dropdowntoggle.directive';
 import { CelsiusPipe } from './pipes/celsius.pipe';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { CelsiusPipe } from './pipes/celsius.pipe';
     WeatherIconComponent,
     DropdownDirective,
     DropdowntoggleDirective,
-    CelsiusPipe
+    CelsiusPipe,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

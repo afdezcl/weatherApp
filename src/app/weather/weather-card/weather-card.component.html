@@ -4,7 +4,7 @@
         <app-weather-icon [weatherInfo]="weather.info"></app-weather-icon>
       </div>
       <mat-card-title>{{weather.city}}</mat-card-title>
-      <mat-card-subtitle>{{weather.hourMessure}} pm</mat-card-subtitle>
+      <mat-card-subtitle>{{weather.hourMessure}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div class="weather-card-content-info">
@@ -53,6 +53,6 @@
           <i class="wi wi-sunset"></i>
         </mat-grid-tile>
       </mat-grid-list>
-      <app-weather-forecast [forecast]="weather.forecast"></app-weather-forecast>
+      <app-weather-forecast [forecasts]="weather.forecasts"></app-weather-forecast>
     </mat-card-content>
   </mat-card>
