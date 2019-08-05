@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  cityName: string;
   sidebarMode = 'side';
 
+  public search(cityName: string){
+    this.cityName = cityName;
+  }
+  
 }
