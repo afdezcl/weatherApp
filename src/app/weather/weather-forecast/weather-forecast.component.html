@@ -6,7 +6,7 @@
         {{forecast?.day}}, {{forecast?.date}}
     </mat-grid-tile>
     <mat-grid-tile class="forecast-icon">
-        <i class="wi wi-day-sunny"></i>
+        <app-weather-icon [weatherInfo]="forecast?.info"></app-weather-icon>
     </mat-grid-tile>
     <mat-grid-tile class="forecast-temp-up">
         <i class="wi wi-direction-up"></i> {{forecast?.maxTemperature}} ºC

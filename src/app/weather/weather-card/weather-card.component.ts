@@ -25,7 +25,7 @@ export class WeatherCardComponent implements OnInit {
       this.weather.pressure = 1080;
       this.weather.sunrise = '6:58 am';
       this.weather.sunset = '11:40 pm';
-      this.weather.temperature = 18;
+      this.weather.temperature = 8;
       this.weather.winddirection = 270;
       this.weather.windspeed = 26;
       this.weather.forecast = new Forecast();
@@ -38,6 +38,21 @@ export class WeatherCardComponent implements OnInit {
       console.log(this.weather);
     }, 1000);
     console.log(this.weather);
+  }
+
+
+  public getColorTemperature(): string {
+    
+    if(this.weather.temperature >= 24 && this.weather !== undefined){
+      return '#EF6C00';
+    }
+
+    if(this.weather.temperature <= 10 && this.weather !== undefined){
+      return '#0277BD';
+    }
+
+    return '#212121';
+
   }
 
 }

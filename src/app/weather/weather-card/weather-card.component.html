@@ -1,7 +1,7 @@
 <mat-card class="weather-card">
     <mat-card-header class="weather-header">
       <div mat-card-avatar class="weather-header-icon">
-        <i class="wi wi-day-sunny"></i>
+        <app-weather-icon [weatherInfo]="weather.info"></app-weather-icon>
       </div>
       <mat-card-title>{{weather.city}}</mat-card-title>
       <mat-card-subtitle>{{weather.hourMessure}} pm</mat-card-subtitle>
@@ -34,7 +34,7 @@
       </mat-grid-list>
       <mat-grid-list cols="1" rowHeight="80px">
         <mat-grid-tile class="weather-info-temp">
-          <div class="number">{{weather.temperature}}</div>
+          <div class="number" [ngStyle]="{color: getColorTemperature()}">{{weather.temperature}}</div>
           <div class="measure">ºC</div>
         </mat-grid-tile>
       </mat-grid-list>
