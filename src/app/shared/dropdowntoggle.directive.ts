@@ -6,7 +6,8 @@ import { DropdownDirective } from './dropdown.directive';
 })
 export class DropdowntoggleDirective {
 
-  @HostListener('click', ['$event'])
+  //HostListener es como un Event Binding pero para directivas
+  @HostListener('click', ['$event']) //aqui esta escuchando el evento click
   toggleOpen($event: any) {
     $event.preventDefault();
     this.dropdown.toggle();
