@@ -7,11 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  cityName: string;
-  title = 'weatherApp';
-  
-  public search(cityName: string): void{
-    this.cityName = cityName;
-  }
+  sidebarMode = 'side';
 
 }
