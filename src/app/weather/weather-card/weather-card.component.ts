@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Weather } from '../../models/weather.model';
 import { Forecast } from '../../models/forecast.model';
 import { WeatherService } from '../services/weather.service';
@@ -10,14 +10,24 @@ import { WeatherService } from '../services/weather.service';
 })
 export class WeatherCardComponent implements OnInit {
 
-  weather: Weather = new Weather(); 
+  weather: Weather = new Weather();
+  cityName: string; 
 
   constructor(private _weatherService: WeatherService) { }
-
+  
   ngOnInit() {
-    this.weather = this._weatherService.getWeatherInfo('Madrid');
+    this._weatherService.getWeatherInfo('london').subscribe(
+      data => {
+        console.log(data);
+        this.weather = this._weatherService.mapResult(data);
+      }
+    );
   }
 
+  public search(cityName: string){
+    this.cityName = cityName;
+    console.log(this.cityName);
+  }
 
   public getColorTemperature(): string {
     

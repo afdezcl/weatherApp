@@ -1,36 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Weather } from 'src/app/models/weather.model';
 import { Forecast } from 'src/app/models/forecast.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
 
-  constructor() { }
+  private urlApi = 'http://api.openweathermap.org/data/2.5/weather?q=';
+  private apiKey = '1d35d7c3d4d66333b5f0985ab3ae8bb2';
 
-  public getWeatherInfo(cityName: string): Weather {
-      const weather = new Weather();
-      weather.city = 'Madrid, ES';
-      weather.date = 'Tue, 01 May 2018 06:00 PM CEST';
-      weather.humidity = 32;
-      weather.info = 'Nublado';
-      weather.maxtemperature = 90;
-      weather.mintemperature = 58;
-      weather.pressure = 1080;
-      weather.sunrise = '6:58 am';
-      weather.sunset = '11:40 pm';
-      weather.temperature = 80;
-      weather.winddirection = 270;
-      weather.windspeed = 26;
-      weather.forecast = new Forecast();
-      weather.forecast.date = '04 May 2018';
-      weather.forecast.day = 'Fri';
-      weather.forecast.info = 'Mostly Cloudy';
-      weather.forecast.maxTemperature = 23;
-      weather.forecast.minTemperature = 8;
-      
-      return weather;
+  constructor(private _http: HttpClient) {}
+
+  public getWeatherInfo(cityName: string): Observable<any> {
+    const url = `${this.urlApi}${cityName}&APPID=${this.apiKey}`;
+    return this._http.get(url);
+    
   }
+
+  public mapResult(result: any): Weather {
+    const weatherInfo = new Weather();
+    weatherInfo.city = `${result.name}, ${result.sys.country}`;
+    console.log(weatherInfo.city);
+    
+    weatherInfo.temperature = result.main.temp;
+    
+    return weatherInfo;
+  }
+
 
 }

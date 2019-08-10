@@ -7,10 +7,10 @@ export class CelsiusPipe implements PipeTransform {
 
   transform(value: any, symbol: boolean = true): any {
     if(value === undefined || value === null || value === ''){
-      value = 32; //que sera los 0 grados
+      value = 273.15; //que sera los 0 grados
     }
 
-    const celsiusValue = (value - 32) * 5.0 / 9.0;
+    const celsiusValue = (value - 273.15);
 
     return `${Math.round(celsiusValue).toString()} ${symbol ? 'ºC' : ''}`;
 
