@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Weather } from '../../models/weather.model';
-import { Forecast } from '../../models/forecast.model';
 import { WeatherService } from '../services/weather.service';
 
 @Component({
@@ -20,13 +19,13 @@ export class WeatherCardComponent implements OnInit {
       data => {
         console.log(data);
         this.weather = this._weatherService.mapResult(data);
-      }
+      }, error => { alert(error.message) }
     );
     this._weatherService.getForecastInfo('london').subscribe(
       data => {
         console.log(data);
         this.weather = this._weatherService.mapForecastResult(data);
-      }
+      }, error => { alert(error.message) }
     );
   }
 
