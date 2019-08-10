@@ -4,7 +4,7 @@
         <app-weather-icon [weatherInfo]="weather.info"></app-weather-icon>
       </div>
       <mat-card-title>{{weather.city}}</mat-card-title>
-      <mat-card-subtitle>{{weather.hourMessure}}</mat-card-subtitle>
+      <mat-card-subtitle>{{weather.date * 1000 | date:'shortTime'}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div class="weather-card-content-info">
@@ -39,17 +39,13 @@
         </mat-grid-tile>
       </mat-grid-list>
       <mat-divider></mat-divider>
-      <mat-grid-list cols="5" rowHeight="120px">
+      <mat-grid-list cols="2" rowHeight="120px">
         <mat-grid-tile class="weather-info-sunrise">
-          <div class="hour">{{weather.sunrise}}</div>
+          <div class="hour">{{weather.sunrise * 1000 | date:'fullTime'}}</div>
           <i class="wi wi-sunrise"></i>
         </mat-grid-tile>
-        <mat-grid-tile colspan="3">
-          <mat-progress-spinner class="sunrise-sunset-spinner" diameter="120" strokeWidth="110" mode="determinate" [value]="weather.percentToSunset">
-          </mat-progress-spinner>
-        </mat-grid-tile>
         <mat-grid-tile class="weather-info-sunset">
-          <div class="hour">{{weather.sunset}} </div>
+          <div class="hour">{{weather.sunset * 1000 | date: 'fullTime'}} </div>
           <i class="wi wi-sunset"></i>
         </mat-grid-tile>
       </mat-grid-list>

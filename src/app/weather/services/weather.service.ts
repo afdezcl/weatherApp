@@ -23,7 +23,17 @@ export class WeatherService {
   public mapResult(result: any): Weather {
     const weatherInfo = new Weather();
     weatherInfo.city = `${result.name}, ${result.sys.country}`;
-    console.log(weatherInfo.city);
+    weatherInfo.maxtemperature = result.main.temp_max;
+    weatherInfo.mintemperature = result.main.temp_min;
+    weatherInfo.humidity = result.main.humidity;
+    weatherInfo.pressure = result.main.pressure;
+    weatherInfo.windspeed = result.wind.speed;
+    weatherInfo.winddirection = result.wind.deg;
+    weatherInfo.info = result.weather[0].main;
+    weatherInfo.date = result.dt;
+    weatherInfo.sunrise = result.sys.sunrise;
+    weatherInfo.sunset = result.sys.sunset;
+    console.log(weatherInfo.sunrise * 1000);
     
     weatherInfo.temperature = result.main.temp;
     
