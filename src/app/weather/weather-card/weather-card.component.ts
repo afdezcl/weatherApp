@@ -22,6 +22,12 @@ export class WeatherCardComponent implements OnInit {
         this.weather = this._weatherService.mapResult(data);
       }
     );
+    this._weatherService.getForecastInfo('london').subscribe(
+      data => {
+        console.log(data);
+        this.weather = this._weatherService.mapForecastResult(data);
+      }
+    );
   }
 
   public search(cityName: string){
