@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { WeatherCardComponent } from './weather/weather-card/weather-card.component';
 
 const appRoutes: Routes = [
     {
@@ -14,7 +14,7 @@ const appRoutes: Routes = [
 
     },
     {
-        path: 'home/login', component: AppComponent
+        path: 'home/login', component: WeatherCardComponent
     }
 ]
 
