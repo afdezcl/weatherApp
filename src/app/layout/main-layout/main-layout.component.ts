@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainLayoutComponent implements OnInit {
 
+  cityName: string;
+  sidebarMode = 'side';
+  
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public search(cityName: string){
+    this.cityName = cityName;
   }
 
 }

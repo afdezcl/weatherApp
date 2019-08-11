@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WeatherCardComponent } from './weather/weather-card/weather-card.component';
+import { LoginContainerComponent } from './login/login-container/login-container.component';
 
 const appRoutes: Routes = [
     {
@@ -12,9 +13,6 @@ const appRoutes: Routes = [
         path: '**', //cualquier ruta que no tengamos declarada ira a este redirect
         redirectTo: 'home/login'
 
-    },
-    {
-        path: 'home/login', component: WeatherCardComponent
     }
 ]
 

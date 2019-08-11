@@ -5,13 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-
-  cityName: string;
-  sidebarMode = 'side';
-
-  public search(cityName: string){
-    this.cityName = cityName;
-  }
-  
-}
+export class AppComponent {}

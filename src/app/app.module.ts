@@ -6,6 +6,8 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { WeatherModule } from './weather/weather.module';
 import { AppRoutingModule } from './app-routing.module';
+import { LayoutModule } from './layout/layout.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AppRoutingModule } from './app-routing.module';
     CoreModule,
     SharedModule,
     WeatherModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModule,
+    LoginModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

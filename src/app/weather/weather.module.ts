@@ -5,6 +5,8 @@ import { WeatherForecastComponent } from './weather-forecast/weather-forecast.co
 import { WeatherSearchComponent } from './weather-search/weather-search.component';
 import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { WeatherService } from './services/weather.service';
+import { WeatherRoutingModule } from './weather-routing.module';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { WeatherService } from './services/weather.service';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    WeatherRoutingModule,
+    LayoutModule
   ],
   exports: [
     WeatherCardComponent,
