@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { MainLayoutComponent } from '../layout/main-layout/main-layout.component';
+import { WeatherSearchComponent } from './weather-search/weather-search.component';
 
 const weatherRoutes: Routes = [
     {
         path: 'weather',
         component: MainLayoutComponent, //primero renderiza este
         children: [
-            { path: 'info', component: WeatherCardComponent } //despues este, su hijo
+            { path: 'search', component: WeatherSearchComponent},
+            { path: 'info/:cityName', component: WeatherCardComponent } //despues este, su hijo
         ]
     }
 ];
