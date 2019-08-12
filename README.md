@@ -1,6 +1,6 @@
 # WeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
+In this project you can consult forecast weather, using Angular 8.1.1 as Frontend and [OpenWeatherMap](https://openweathermap.org/) like API REST.
 
 ## Development server
 
