@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, state, transition, animate, style } from '@angular/animations';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -46,12 +46,10 @@ export class LoginCardComponent implements OnInit {
 
   ngOnInit() {
     this.loginGroup = new FormGroup({
-      user: new FormControl(''),
-      pass: new FormControl('')
+      user: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(4)])
     });
   }
-
-
 
 
   public loginSubmit() {
