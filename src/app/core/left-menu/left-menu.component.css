@@ -67,3 +67,12 @@
 
 
 /******************** FIN DROPDOWN *****************/
+
+.mat-list-item.active {
+    background-color: #3b5ea3;
+    color: #fafafa;
+}
+
+.cl:hover {
+    background-color: white;
+}

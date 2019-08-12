@@ -13,9 +13,9 @@ export class LeftMenuComponent implements OnInit {
 
   ngOnInit() {
     this.cities.push('Madrid, ES');
-    this.cities.push('Budapest, HG');
-    this.cities.push('Londres, UK');
-    this.cities.push('Berlin, GEM');
+    this.cities.push('Budapest, HU');
+    this.cities.push('London, GB');
+    this.cities.push('Berlin, DE');
     this.cities.push('Bruselas, BEL');
 
   }
