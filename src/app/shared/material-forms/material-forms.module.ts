@@ -12,7 +12,7 @@ import {
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 //Solo hacemos los exports, no hacemos imports. Este es un modulo organizativo
 @NgModule({
@@ -28,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatSidenavModule,
     // Forms
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: []
 })

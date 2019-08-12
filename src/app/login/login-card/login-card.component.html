@@ -3,17 +3,17 @@
           <i class="fa fa-user fa-lg"></i>
         </div>
         <div class="border-top-input">
-          <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
+          <form [formGroup]="loginGroup">
             <mat-card-content>
               <mat-grid-list cols="1" rowHeight="60px">
                 <mat-grid-tile>
                   <mat-form-field>
-                    <input matInput placeholder="User" name="user" [(ngModel)]="user">
+                    <input matInput placeholder="User" formControlName="user">
                   </mat-form-field>
                 </mat-grid-tile>
                 <mat-grid-tile>
                   <mat-form-field>
-                    <input matInput placeholder="Password" name="password" [(ngModel)]="password">
+                    <input matInput placeholder="Password" formControlName="password">
                   </mat-form-field>
                 </mat-grid-tile>
               </mat-grid-list>

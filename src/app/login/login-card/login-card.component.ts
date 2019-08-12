@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, state, transition, animate, style } from '@angular/animations';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -18,7 +19,7 @@ import { trigger, state, transition, animate, style } from '@angular/animations'
       ])
   ]
 })
-export class LoginCardComponent {
+export class LoginCardComponent implements OnInit {
 
   backgrounds = [
     { main: 'https://drive.google.com/uc?id=1wsk0lus_UmgB1x7YBHZ30PHhd59oI_QJ', blur: 'https://drive.google.com/uc?id=13sGmUKF193j2BDrvOtAuGMV27mEe5HSE' },
@@ -33,6 +34,8 @@ export class LoginCardComponent {
   user = '';
   password = '';
 
+  loginGroup: FormGroup;
+
   constructor(
     private _router: Router,
 
@@ -40,6 +43,16 @@ export class LoginCardComponent {
     this.activeBackground(false);
     setInterval(() => { this._onChangeBackground(); }, 600 * this.secondsToChange);
   }
+
+  ngOnInit() {
+    this.loginGroup = new FormGroup({
+      user: new FormControl(''),
+      pass: new FormControl('')
+    });
+  }
+
+
+
 
   public loginSubmit() {
     this._router.navigate([`/weather/search`]);
