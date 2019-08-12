@@ -3,7 +3,7 @@
           <i class="fa fa-user fa-lg"></i>
         </div>
         <div class="border-top-input">
-          <form [formGroup]="loginGroup">
+          <form [formGroup]="loginGroup" (submit)="loginSubmit(loginGroup)">
             <mat-card-content>
               <mat-grid-list cols="1" rowHeight="60px">
                 <mat-grid-tile>

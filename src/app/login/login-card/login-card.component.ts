@@ -52,7 +52,8 @@ export class LoginCardComponent implements OnInit {
   }
 
 
-  public loginSubmit() {
+  public loginSubmit(loginGroup: FormGroup) {
+    console.log(this.loginGroup.value, this.loginGroup.valid);
     this._router.navigate([`/weather/search`]);
   }
 
