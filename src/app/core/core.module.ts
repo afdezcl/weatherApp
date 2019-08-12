@@ -5,6 +5,7 @@ import { LeftMenuComponent } from './left-menu/left-menu.component';
 import { MatToolbarModule, MatListModule, MatDividerModule } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './auth-guard/auth-guard.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { RouterModule, Routes } from '@angular/router';
     RouterModule.forChild([])
   ],
   declarations: [TopMenuComponent, LeftMenuComponent],
-  exports: [TopMenuComponent, LeftMenuComponent]
+  exports: [TopMenuComponent, LeftMenuComponent],
+  providers: [AuthGuardService]
 })
 export class CoreModule { }
